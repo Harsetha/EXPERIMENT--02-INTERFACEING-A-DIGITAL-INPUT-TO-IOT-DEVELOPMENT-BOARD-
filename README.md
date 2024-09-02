@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 02/09/24
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME:  HARSETHA J
+###  ROLL NO : 212223220032
+###  DEPARTMENT:  IT
 
 
 # EXPERIMENT--02-INTERFACING-A-DIGITAL-INPUT-TO-IOT-DEVELOPMENT-BOARD-
@@ -78,11 +78,28 @@ The full form of an ARM is an advanced reduced instruction set computer (RISC) m
 
 ## STM 32 CUBE PROGRAM :
 
+```
+#include "main.h"
+#include "stdbool.h"
+void IRsensor();
+bool IRsensorop;
+void IRsensor()
+	  {
 
-
+		  IRsensorop=HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_0); 
+		  if (IRsensorop==1)
+		  {
+			  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,GPIO_PIN_SET);
+			  HAL_Delay(500);
+			  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,GPIO_PIN_RESET);
+			  HAL_Delay(500);
+		  }
+ }
+```
 ## Output  :
  
- 
+ ![Screenshot (87)](https://github.com/user-attachments/assets/fd52d91d-a89c-4a3a-8430-a1cf9250845f)
+
  
  
 ## Result :
